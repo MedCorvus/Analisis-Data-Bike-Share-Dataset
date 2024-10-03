@@ -57,8 +57,8 @@ def casualRegister_df(df):
     casual_register_df = casual_year_df.merge(reg_year_df, on="yr")
     return casual_register_df
 
-day_df = pd.read_csv("all_data.csv")
-hour_df = pd.read_csv("hour.csv")
+day_df = pd.read_csv("Submission/dashboard/all_data.csv")
+hour_df = pd.read_csv("Submission/data/hour.csv")
 
 day_df["dteday"] = pd.to_datetime(day_df["dteday"])
 hour_df["dteday"] = pd.to_datetime(hour_df["dteday"])
@@ -66,7 +66,7 @@ min_date = day_df["dteday"].min()
 max_date = day_df["dteday"].max()
 
 with st.sidebar:
-    st.image("Date.png")
+    st.image("Submission/dashboard/Date.png")
     
     start_date, end_date = st.date_input(
         label='Rentang Waktu',
